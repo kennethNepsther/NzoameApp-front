@@ -1,0 +1,73 @@
+<div class="login-container">
+  <div class="login-box">
+    <!-- Login -->
+    <form *ngIf="activeForm ==='login'" [formGroup]="loginForm" (ngSubmit)="login()">
+      <div class="login-header">
+        <header>NZOAME</header>
+        <p>O Lar dos seus sonhos começa aqui Arrende com confiança</p>
+      </div>
+      <div class="input-box">
+        <input type="text" class="input-field" formControlName="email" />
+        <label for="email">Email ou telefone</label>
+      </div>
+      <div class="input-box">
+        <input type="password" class="input-field" formControlName="password" />
+        <label for="password">Password</label>
+      </div>
+      <div class="forgot">
+        <section>
+          <!-- <input type="checkbox" name="rememberMe" id="check" />
+          <label for="rememberMe">Remember</label> -->
+        </section>
+        <section>
+          <a href="#">Esqueci minha senha</a>
+        </section>
+      </div>
+      <div class="input-box">
+        <button type="submit" class="input-submit">Entrar </button>
+      </div>
+      <div class="sign-up">
+        <p (click)="toggleForm('register')" class="link">Não tem uma conta?
+          <span class="highlighted">Cadastra-te</span>
+        </p>
+      </div>
+    </form>
+
+    <!-- Register -->
+
+    <form *ngIf="activeForm==='register' " [formGroup]="registerForm" (ngSubmit)="register()">
+      <div class="login-header">
+        <header>NZOAME</header>
+        <p>O lar dos seus sonhos começa aqui: arrende com confiança</p>
+      </div>
+      <div class="input-box">
+        <input type="text" class="input-field" formControlName="fullname" />
+        <label for="fullname">Nome Completo</label>
+      </div>
+      <div class="input-box">
+        <input type="text" class="input-field" formControlName="email" />
+        <label for="email">Email</label>
+      </div>
+      <div class="input-box">
+        <input type="text" class="input-field" formControlName="phone" />
+        <label for="phone">Telefone</label>
+      </div>
+      <div class="input-box">
+        <input type="text" class="input-field" formControlName="alternativephone" />
+        <label for="alternativephone">Telefone alternativo</label>
+      </div>
+      <div class="input-box">
+        <input type="password" class="input-field" formControlName="password" />
+        <label for="password">Password</label>
+      </div>
+      <div class="input-box">
+        <button type="submit" class="input-submit">Cadastar</button>
+      </div>
+      <div class="sign-up">
+        <p (click)="toggleForm('login')" class="link">Possui uma conta?
+          <span class="highlighted">Entrar</span>
+        </p>
+      </div>
+    </form>
+  </div>
+</div>
